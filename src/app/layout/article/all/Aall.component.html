@@ -1,0 +1,31 @@
+<p>Aall works!</p>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Code</th>
+    <th scope="col">Designation</th>
+    <th scope="col">Date Entrée</th>
+    <th scope="col">Prix</th>
+    <th scope="col">Quantité</th>
+    <th scope="col">Dépot</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor=" let article of articles"> <!--| employeeFilterPipe:searchText-->
+    <td>{{article.id}}</td>
+    <td>{{article.designation}}</td>
+    <td>{{article.dateEntre}}</td>
+    <td>{{article.prix}}</td>
+    <td>{{article.quantite}}</td>
+    <td>{{article.depot.nom}}</td>
+    <td>
+      <button class="btn btn-warning" [routerLink]="['/article/edit', article.id]">Modifier</button>
+      <button class="btn btn-danger" (click)="deleteArticle(article.id)">Supprimer</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+
+<button class="btn btn-warning" [routerLink]="['/article/add']">Ajouter</button>

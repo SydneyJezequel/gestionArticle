@@ -1,0 +1,39 @@
+<p>Aadd works!</p>
+
+<div class="form_container">
+  <form [formGroup]="createForm" >
+    <div class="group">
+      <label>Designation
+        <input type="text" name="designation" formControlName="designation">
+      </label>
+    </div>
+    <div class="group">
+      <label>Date
+        <input type="date" name="date" formControlName="date">
+      </label>
+    </div>
+    <div class="group">
+      <label>Prix
+        <input type="number" name="prix" formControlName="prix">
+      </label>
+    </div>
+    <div class="group">
+      <label>Quantite
+        <input type="number" name="quantite" formControlName="quantite">
+      </label>
+    </div>
+    <div class="group">
+      <label>Depot
+        <select formControlName="depot">
+          <option value="default">----</option>
+          <option *ngFor="let depot of depots" [value]="depot.id">
+            {{depot.nom}}
+          </option>
+        </select>
+      </label>
+    </div>
+    <div class="group">
+      <button (click)="addArticle($event)">Ajouter un Article</button>
+    </div>
+  </form>
+</div>

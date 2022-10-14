@@ -1,0 +1,19 @@
+<p>Dupdate works!</p>
+
+<div class="form_container">
+  <form [formGroup]="createForm" >
+    <div class="group">
+      <label>Code du dépot
+        <input type="number" name="id" formControlName="id">
+      </label>
+    </div>
+    <div class="group">
+      <label>Nom du dépot
+        <input type="text" name="nom" formControlName="nom">
+      </label>
+    </div>
+    <div class="group">
+      <button (click)="editDepot($event)">Modifier le Dépot</button>
+    </div>
+  </form>
+</div>

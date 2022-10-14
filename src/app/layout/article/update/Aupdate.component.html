@@ -1,0 +1,69 @@
+<p>Aupdate works!</p>
+
+<div class="form_container">
+  <form [formGroup]="createForm" >
+    <div class="group">
+      <label>Designation
+        <input type="text" name="designation" formControlName="designation">
+      </label>
+    </div>
+    <div class="group">
+      <label>Date
+        <input type="date" name="date" formControlName="date">
+      </label>
+    </div>
+    <div class="group">
+      <label>Prix
+        <input type="number" name="prix" formControlName="prix">
+      </label>
+    </div>
+    <div class="group">
+      <label>Quantite
+        <input type="number" name="quantite" formControlName="quantite">
+      </label>
+    </div>
+    <div class="group">
+      <label>Depot
+        <select formControlName="depot">
+          <option value="default">----</option>
+          <option *ngFor="let depot of depots" [value]="depot.id">
+            {{depot.nom}}
+          </option>
+        </select>
+      </label>
+    </div>
+    <div class="group">
+      <button (click)="editArticle($event)">Modifier</button>
+    </div>
+  </form>
+</div>
+
+<!--
+<div class="form_container">
+  <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && updateArticle(article)">
+    <div class="group">
+      <label for="designation">Designation</label>
+      <input type="text" name="designation" id="designation" [(ngModel)]="article.designation" #nom="ngModel" required>
+    </div>
+    <div class="group">
+      <label for="date">Nom</label>
+      <input type="date" name="date" id="date" [(ngModel)]="article.dateEntre" #nom="ngModel" required>
+    </div>
+    <div class="group">
+      <label for="prix">Nom</label>
+      <input type="number" name="name" id="prix" [(ngModel)]="article.prix" #nom="ngModel" required>
+    </div>
+    <div class="group">
+      <label for="quantite">Nom</label>
+      <input type="number" name="name" id="quantite" [(ngModel)]="article.quantite" #nom="ngModel" required>
+    </div>
+    <div class="group">
+      <label for="depot">Nom</label>
+      <input type="text" name="name" id="depot" [(ngModel)]="article.depot" #nom="ngModel" required>
+    </div>
+    <div class="group">
+      <button (click)="updateArticle(article)">Modifier</button>
+    </div>
+  </form>
+</div>
+-->

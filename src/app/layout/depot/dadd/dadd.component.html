@@ -1,0 +1,14 @@
+<p>Dadd works!</p>
+
+<div class="form_container">
+  <form [formGroup]="createForm" >
+    <div class="group">
+      <label>Nom du dépot
+        <input type="text" name="nom" formControlName="nom">
+      </label>
+    </div>
+    <div class="group">
+      <button (click)="addDepot($event)">Ajouter un Dépot</button>
+    </div>
+  </form>
+</div>

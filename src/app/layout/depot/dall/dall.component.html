@@ -1,0 +1,23 @@
+<p>Dall works!</p>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">Nom</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor=" let depot of depots"> <!--| employeeFilterPipe:searchText-->
+    <td>{{depot.id}}</td>
+    <td>{{depot.nom}}</td>
+    <td>
+      <button class="btn btn-warning" [routerLink]="['/depot/edit', depot.id]">Modifier</button>
+      <button class="btn btn-danger" (click)="deleteDepot(depot.id)">Supprimer</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+
+<button class="btn btn-warning" [routerLink]="['/depot/add']">Ajouter</button>
